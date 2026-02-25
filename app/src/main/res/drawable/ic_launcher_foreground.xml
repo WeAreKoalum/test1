@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Icono simple: TV con triángulo de play -->
+    <path
+        android:fillColor="#FF0099FF"
+        android:pathData="M20,25 L88,25 Q92,25 92,29 L92,72 Q92,76 88,76 L20,76 Q16,76 16,72 L16,29 Q16,25 20,25 Z" />
+    <path
+        android:fillColor="#FF0F0F0F"
+        android:pathData="M38,40 L38,62 L68,51 Z" />
+    <path
+        android:fillColor="#FF0099FF"
+        android:pathData="M40,78 L68,78 L68,84 L40,84 Z" />
+</vector>

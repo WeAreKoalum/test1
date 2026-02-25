@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IPTV Pro</string>
+
+    <!-- Pantalla de listas -->
+    <string name="listas_m3u">Listas M3U</string>
+    <string name="agregar_lista">Agregar lista M3U</string>
+    <string name="nombre_lista">Nombre de la lista</string>
+    <string name="url_lista">URL de la lista M3U</string>
+    <string name="url_epg">URL de la guía EPG (opcional)</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="editar">Editar</string>
+    <string name="actualizar">Actualizar</string>
+
+    <!-- Pantalla home de lista -->
+    <string name="favoritos">Favoritos</string>
+    <string name="recientes">Vistos recientemente</string>
+    <string name="categorias">Categorías</string>
+    <string name="buscar_canales">Buscar canales</string>
+
+    <!-- EPG -->
+    <string name="ahora">Ahora</string>
+    <string name="siguiente">A continuación</string>
+    <string name="epg_actualizada">Guía EPG actualizada</string>
+    <string name="epg_error">Error al cargar la guía EPG</string>
+    <string name="sin_info_epg">Sin información de programa</string>
+
+    <!-- Estado vacío/error -->
+    <string name="sin_categoria">Sin categoría</string>
+    <string name="cargando">Cargando…</string>
+    <string name="sin_favoritos">No hay canales favoritos.\nPulsa la estrella en cualquier canal para añadirlo.</string>
+    <string name="sin_recientes">Aún no has visto ningún canal.</string>
+    <string name="sin_resultados">No se encontraron resultados</string>
+    <string name="sin_listas">No hay listas configuradas.\nPulsa + para agregar tu primera lista M3U.</string>
+    <string name="error_cargar">Error al cargar</string>
+    <string name="reintentar">Reintentar</string>
+
+    <!-- Validación -->
+    <string name="url_invalida">URL no válida (debe empezar por http o https)</string>
+    <string name="nombre_requerido">El nombre es obligatorio</string>
+    <string name="url_requerida">La URL es obligatoria</string>
+
+    <!-- Reproductor -->
+    <string name="canal_no_reproducible">No se puede reproducir este canal</string>
+    <string name="agregar_favorito">Añadir a favoritos</string>
+    <string name="quitar_favorito">Quitar de favoritos</string>
+    <string name="volver">Volver</string>
+</resources>

@@ -19,31 +19,32 @@ jobs:
         with:
           ref: claude/android-tv-app-setup-3H4Kw
 
-      # 2. Instalar Java 17 (necesario para compilar Android)
+      # 2. Instalar Java 17 (necesario para Gradle y Android)
       - name: Configurar JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      # 3. Instalar Gradle 8.6 y gestionar el wrapper automáticamente
+      # 3. Configurar Android SDK (pone sdkmanager en el PATH y acepta licencias)
+      - name: Configurar Android SDK
+        uses: android-actions/setup-android@v3
+
+      # 4. Instalar los componentes del SDK que necesita compileSdk=34
+      - name: Instalar plataforma Android 34 y Build Tools
+        run: sdkmanager "platforms;android-34" "build-tools;34.0.0" "platform-tools"
+
+      # 5. Instalar Gradle 8.6 (evita necesitar gradle-wrapper.jar en el repo)
       - name: Configurar Gradle
         uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: '8.6'
 
-      # 4. Instalar Android SDK y aceptar licencias
-      - name: Configurar Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Aceptar licencias Android SDK
-        run: yes | sdkmanager --licenses || true
-
-      # 5. Compilar la APK en modo debug
+      # 6. Compilar la APK en modo debug
       - name: Compilar APK debug
         run: gradle assembleDebug --no-daemon --stacktrace
 
-      # 6. Publicar la APK como archivo descargable
+      # 7. Publicar la APK como archivo descargable (disponible 30 días)
       - name: Subir APK como descargable
         uses: actions/upload-artifact@v4
         with:

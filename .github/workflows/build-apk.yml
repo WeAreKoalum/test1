@@ -1,0 +1,53 @@
+name: Compilar APK
+
+on:
+  push:
+    branches:
+      - "claude/android-tv-app-setup-3H4Kw"
+      - "main"
+      - "master"
+  workflow_dispatch:   # Permite lanzarlo manualmente desde la web de GitHub
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descargar el código del repositorio
+      - name: Descargar código
+        uses: actions/checkout@v4
+        with:
+          ref: claude/android-tv-app-setup-3H4Kw
+
+      # 2. Instalar Java 17 (necesario para compilar Android)
+      - name: Configurar JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # 3. Instalar Gradle 8.6 y gestionar el wrapper automáticamente
+      - name: Configurar Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.6'
+
+      # 4. Instalar Android SDK y aceptar licencias
+      - name: Configurar Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Aceptar licencias Android SDK
+        run: yes | sdkmanager --licenses || true
+
+      # 5. Compilar la APK en modo debug
+      - name: Compilar APK debug
+        run: gradle assembleDebug --no-daemon --stacktrace
+
+      # 6. Publicar la APK como archivo descargable
+      - name: Subir APK como descargable
+        uses: actions/upload-artifact@v4
+        with:
+          name: IPTVPro-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 30

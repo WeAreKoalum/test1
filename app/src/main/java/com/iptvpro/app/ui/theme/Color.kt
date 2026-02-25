@@ -4,7 +4,7 @@ import androidx.compose.ui.graphics.Color
 
 // Paleta oscura estilo TV
 val Background = Color(0xFF0F0F0F)
-val Surface = Color(0xFF1A1A1A)
+val SurfaceColor = Color(0xFF1A1A1A)
 val SurfaceVariant = Color(0xFF242424)
 val CardBackground = Color(0xFF1E1E1E)
 val CardFocused = Color(0xFF2C2C2C)

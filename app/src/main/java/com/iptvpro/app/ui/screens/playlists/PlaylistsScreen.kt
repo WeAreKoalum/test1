@@ -173,7 +173,7 @@ fun PlaylistsScreen(
     deletingPlaylist?.let { playlist ->
         AlertDialog(
             onDismissRequest = { deletingPlaylist = null },
-            containerColor = Surface,
+            containerColor = SurfaceColor,
             title = {
                 Text("Eliminar lista", color = TextPrimary)
             },
@@ -352,7 +352,7 @@ private fun PlaylistDialog(
     Dialog(onDismissRequest = onDismiss) {
         Card(
             shape = RoundedCornerShape(16.dp),
-            colors = CardDefaults.cardColors(containerColor = Surface),
+            colors = CardDefaults.cardColors(containerColor = SurfaceColor),
             modifier = Modifier.width(500.dp)
         ) {
             Column(modifier = Modifier.padding(24.dp)) {

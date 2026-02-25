@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Tema base oscuro para TV. Compose maneja el tema real; este es para el sistema/ActivityManager -->
-    <style name="Theme.IPTVPro" parent="android:Theme.Leanback">
+    <style name="Theme.IPTVPro" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@color/background</item>
         <item name="android:colorBackground">@color/background</item>
         <item name="android:colorPrimary">@color/primary</item>
